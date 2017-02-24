@@ -1,23 +1,33 @@
-<div class="authform">
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <h3>Sign up</h3>
+
+
+<!--Form with header-->
+<div class="card">
+  <div class="card-block">
+    <!--Header-->
+    <div class="form-header blue-gradient">
+        <h3 class="text-center">Sign Up</h3>
+    </div>
+    <!--Body-->
+    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
     <%= devise_error_messages! %>
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+    <div class="md-form">
+      <i class="fa fa-user prefix"></i>
+      <%= f.text_field :name, :autofocus => true, class: 'form-control', placeholder: "Enter name" %>
     </div>
-    <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+    <div class="md-form">
+      <i class="fa fa-envelope prefix"></i>
+      <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
     </div>
-    <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+    <div class="md-form">
+      <i class="fa fa-lock prefix"></i>
+      <%= f.password_field :password, class: 'form-control', placeholder: "Create password" %>
     </div>
-    <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <div class="md-form">
+      <i class="fa fa-lock prefix"></i>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
     </div>
-     <%= f.submit 'Sign up', :class => 'button right' %>
-  <% end %>
+    <%= f.submit 'Sign up', :class => 'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
+<!--/Form with header-->
