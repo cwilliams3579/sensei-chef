@@ -22,30 +22,38 @@
               <form class="" action="/users" method="post">
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                 <div class="md-form">
-
                     <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="form2" class="form-control">
+                    <input type="text" id="first_name" name="user[first_name]" class="form-control">
+                    <label for="form2">First Name</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="last_name" name="user[last_name]" class="form-control">
+                    <label for="form2">Last Name</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="email" name="user[email]" class="form-control">
                     <label for="form2">Your email</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="form3" class="form-control">
+                    <input type="password" id="password" name="user[password]" class="form-control">
                     <label for="form3">Your password</label>
                 </div>
 
                 <div class="md-form">
                     <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="form4" class="form-control">
+                    <input type="password" id="password_confirmation" name="user[password_confirmation]" class="form-control">
                     <label for="form4">Repeat password</label>
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Sign Up" class="btn btn-primary btn-lg"/>
+                    <input type="submit" value="Sign Up" class="btn btn-danger btn-lg"/>
 
                     <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox1">
-                        <label for="checkbox1">Remember me</label>
+                        <input type="checkbox" name="" value="Remember me">
                     </fieldset>
                 </div>
               </form>

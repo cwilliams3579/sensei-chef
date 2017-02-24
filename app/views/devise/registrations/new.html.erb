@@ -4,7 +4,7 @@
 <div class="card">
   <div class="card-block">
     <!--Header-->
-    <div class="form-header blue-gradient">
+    <div class="form-header red-gradient">
         <h3 class="text-center">Sign Up</h3>
     </div>
     <!--Body-->
@@ -12,7 +12,12 @@
     <%= devise_error_messages! %>
     <div class="md-form">
       <i class="fa fa-user prefix"></i>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control', placeholder: "Enter name" %>
+      <%= f.text_field :first_name, autofocus: true, placeholder: "Enter your first name", class: "form-control" %>
+    </div>
+
+    <div class="md-form">
+      <i class="fa fa-user prefix"></i>
+      <%= f.text_field :last_name, placeholder: "Enter your last name", class: "form-control" %>
     </div>
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
@@ -26,7 +31,7 @@
       <i class="fa fa-lock prefix"></i>
       <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
     </div>
-    <%= f.submit 'Sign up', :class => 'btn btn-primary' %>
+    <%= f.submit 'Sign up', :class => 'btn btn-danger' %>
     <% end %>
   </div>
 </div>

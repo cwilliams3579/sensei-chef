@@ -4,7 +4,13 @@
     <%= devise_error_messages! %>
     <div class="md-form">
       <i class="fa fa-user prefix"></i>
-      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+      <%= f.text_field :first_name, autofocus: true, placeholder: "Enter your first name", class: "form-control" %>
+      <label for="">Your Name</label>
+    </div>
+
+    <div class="md-form">
+      <i class="fa fa-user prefix"></i>
+      <%= f.text_field :last_name, placeholder: "Enter your last name", class: "form-control" %>
     </div>
     <div class="md-form">
       <%= f.label :email %>

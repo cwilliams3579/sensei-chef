@@ -44,6 +44,7 @@ group :development do
 end
 group :development, :test do
   gem 'factory_girl_rails'
+  gem 'hirb'
   gem 'faker'
   gem 'rspec-rails'
   gem 'sqlite3'

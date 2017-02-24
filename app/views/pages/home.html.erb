@@ -6,3 +6,4 @@
   Sign up or Log in
   </a>
 </div>
+<%= line_chart User.group(:email).group(:created_at).count %>

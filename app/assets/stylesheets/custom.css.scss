@@ -1,3 +1,4 @@
+$danger: #CC0000;
 .form-header {
   color: #fff;
   text-align: center;
@@ -44,4 +45,8 @@
 
 .navbar {
   background-color: #CC0000 !important;
+}
+
+.danger {
+  background: $danger !important;
 }
