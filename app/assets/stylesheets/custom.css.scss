@@ -50,3 +50,30 @@ $danger: #CC0000;
 .danger {
   background: $danger !important;
 }
+
+#checkbox1 {
+  padding-left: 35px;
+  display: inline-block;
+  line-height: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -khtml-user-select: none;
+}
+
+.table-responsive {
+  width: 100%;
+}
+
+#jumbotron {
+	background: url("http://mdbootstrap.com/img/Photos/Horizontal/Food/full%20page/1.jpg")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;
+	border-radius: 20px;
+	padding: 10px;
+}
