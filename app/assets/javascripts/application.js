@@ -15,4 +15,5 @@
 //= require highcharts
 //= require chartkick
 //= require bootstrap-sprockets
+//= require sweet-alert-confirm
 //= require_tree .

@@ -1,5 +1,6 @@
 <h3>Welcome <%#= current_user.first_name %></h3>
 <p><%#= link_to 'Users:', users_path %> <%= User.count %> registered</p>
+<p><%= render 'shared/page_title', title: "All Recipes" %> </p>
 <!--Shopping Cart table-->
 <div class="table-responsive">
     <table class="table product-table">
@@ -26,7 +27,7 @@
                 <th scope="row">
                     <%= image_tag(recipe.image, class: "img-fluid") %>
                 </th>
-                <td><strong><%= recipe.name %></strong><br></td>
+                <td><strong><%= link_to recipe.name, recipe_path(recipe), class: "text-danger" %></strong><br></td>
 
                     <td><%= truncate(recipe.description, length: 100) %></td>
                 <td>
@@ -36,16 +37,16 @@
                 <td>
                     <span class="qty"> </span>
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-sm btn-primary btn-rounded">
+                        <label class="btn btn-sm btn-danger btn-rounded">
                             <input type="radio" name="options" id="option1">&mdash;
                         </label>
-                        <label class="btn btn-sm btn-primary btn-rounded">
+                        <label class="btn btn-sm btn-danger btn-rounded">
                             <input type="radio" name="options" id="option2">+
                         </label>
                     </div>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="Remove item">X
+                    <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Remove item">X
                     </button>
                 </td>
             </tr>
@@ -55,7 +56,7 @@
         </tbody>
         <!--/Table body-->
     </table>
-</div>
+</div><br>
 <!--/Shopping Cart table-->
 
 <%= pie_chart Recipe.group(:name).count %>

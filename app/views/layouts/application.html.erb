@@ -5,8 +5,10 @@
     <title><%= content_for?(:title) ? yield(:title) : "Sensei Chef" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Sensei Chef" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+    <link rel="stylesheet" href="http://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.css">
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+      <script type="text/javascript" src="http://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.js"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>

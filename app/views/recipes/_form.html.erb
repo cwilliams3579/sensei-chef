@@ -1,0 +1,32 @@
+<!--Form with header-->
+<div class="card">
+    <div class="card-block">
+
+        <!--Header-->
+        <div class="form-header red-gradient">
+            <h3><i class="fa fa-chef"></i> Recipe</h3>
+        </div>
+
+        <!--Body-->
+        <div class="md-form">
+          <%= form_for(@recipe, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
+            <i class="fa fa-book prefix"></i>
+            <%= f.text_field :name, input_html: { class: "form-control", placeholder: "Enter recipe name", autofocus: true } %>
+        </div>
+        <div class="md-form">
+            <i class="fa fa-pencil prefix"></i>
+            <%= f.text_area :description, rows: 10, input_html: { class: "form-control" } %>
+        </div>
+
+        <div class="md-form">
+            <%= f.button class: "btn btn-danger btn-lg btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin fa-2x'></i> Processing..."} %>
+        </div>
+
+        <div class="text-center">
+            <hr>
+            [ <%= link_to "Cancel request and return to the recipes listing", recipes_path, class: "text-danger" %> ]
+        </div>
+      <% end %>
+    </div>
+</div>
+<!--/Form with header-->

@@ -1,9 +1,9 @@
 <%= render 'layouts/register' %>
-<div id="jumbotron center">
-  <h1 class="text-danger">Welcome to my recipe app</h1>
-  <h2 class="text-danger">Sharing is caring!</h2>
+<div class="jumbotron-home text-white center"><br><br>
+  <h1>Welcome to my recipe app</h1><br>
+  <h2>Sharing is caring!</h2>
   <a href="/users/sign_up" type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-register">
   Sign up or Log in
   </a>
-</div>
-<%= line_chart User.group(:email).group(:created_at).count %>
+</div><br>
+<%= line_chart Recipe.group(:name).group(:created_at).count %>
