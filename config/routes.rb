@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { registrations: 'registrations'}
-  resources :chefs
+  # devise_for :users, :controllers => { registrations: 'registrations'}
+  root to: 'pages#home'
+
+  resources :chefs, except: [:new]
 
   resources :recipes do
     collection do
@@ -8,7 +10,11 @@ Rails.application.routes.draw do
     end
   end
 
-  root to: 'pages#home'
+  get '/signup', to: 'chefs#new'
+  resources :chefs, except: [:new]
 
-  post '/users' => 'devise/registrations#new'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  # post '/chefs' => 'chefs#new'
 end

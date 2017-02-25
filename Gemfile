@@ -30,6 +30,7 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'high_voltage'
 group :development do
   gem 'better_errors'

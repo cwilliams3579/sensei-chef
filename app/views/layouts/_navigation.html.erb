@@ -12,24 +12,47 @@
                     <a class="nav-link">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Features</a>
                     <%= render 'layouts/navigation_links', class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                   <%= render 'layouts/nav_links_for_auth', class: "nav-link" %>
-                </li>
-                <li class="nav-item btn-group dropdown">
-                    <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <a class="dropdown-item"><%= link_to "Create a new recipe", new_recipe_path %></a>
-                        <a class="dropdown-item">Another action</a>
-                        <a class="dropdown-item">Something else here</a>
+                </li>&nbsp;&nbsp;
+                <!-- Split button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Recipes</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#"><%= link_to "Recipes", recipes_path, class: "btn btn-danger btn-block btn-sm" %></a>
+                        <a class="dropdown-item" href="#"><%= link_to "New recipe", new_recipe_path, class: "btn btn-danger btn-block btn-sm" %></a>
+                        <a class="dropdown-item" href="#"><%= link_to "Chefs", chefs_path, class: "btn btn-danger btn-block btn-sm" %></a>
                     </div>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Split button -->
+                <!-- Split button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger">Profile</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#"><%= render 'layouts/nav_links_for_auth', class: "btn btn-danger btn-block btn-sm" %></a>
+                        <a class="dropdown-item" href="#"><%= link_to "Chefs", chefs_path, class: "btn btn-danger btn-block btn-sm" %></a>
+                    </div>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <!-- Split button -->
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <%= form_tag search_recipes_path, method: :get, class: "form-inline navbar-form navbar-right", role: "search" do %>
+                  <%= text_field_tag :search, params[:search], class: "form-inline waves-effect waves-light form-control" %>
                 </li>
-            </ul>
-            <form class="form-inline waves-effect waves-light">
-                <input class="form-control" type="text" placeholder="Search">
-            </form>
+                <li><%= submit_tag "Search", name: nil, class: "btn btn-danger btn-block" %></li>
+                <% end %>
+
+              </ul>
+
+              </ul>
         </div>
 </nav>
 <!--/.Navbar-->

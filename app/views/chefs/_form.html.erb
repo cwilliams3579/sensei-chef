@@ -1,5 +1,3 @@
-
-
 <!--Form with header-->
 <div class="card">
   <div class="card-block">
@@ -8,17 +6,12 @@
         <h3 class="text-center">Sign Up</h3>
     </div>
     <!--Body-->
-    <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f| %>
-    <%= devise_error_messages! %>
+    <%= form_for @chef, :html => { :role => 'form'} do |f| %>
     <div class="md-form">
       <i class="fa fa-user prefix"></i>
-      <%= f.text_field :first_name, autofocus: true, placeholder: "Enter your first name", class: "form-control" %>
+      <%= f.text_field :chefname, autofocus: true, placeholder: "Enter your name", class: "form-control" %>
     </div>
 
-    <div class="md-form">
-      <i class="fa fa-user prefix"></i>
-      <%= f.text_field :last_name, placeholder: "Enter your last name", class: "form-control" %>
-    </div>
     <div class="md-form">
       <i class="fa fa-envelope prefix"></i>
       <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
@@ -31,10 +24,9 @@
       <i class="fa fa-lock prefix"></i>
       <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
     </div>
-    <%= f.submit 'Sign up', :class => 'btn btn-danger btn-block btn-lg' %><br>
-    <fieldset class="form-group">
-      <input type="checkbox" id="checkbox1">
-      <label for="checkbox1">Remember me</label>
+    <%= f.submit 'Create Account', :class => 'btn btn-danger btn-block btn-lg' %><br>
+    <fieldset class="form-group center">
+      <%= link_to "Cancel request and return to recipes listing", recipes_path, class: "text-danger" %>
     </fieldset>
     <% end %>
   </div>
