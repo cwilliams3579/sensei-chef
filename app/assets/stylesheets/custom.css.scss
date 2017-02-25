@@ -84,6 +84,10 @@ $danger: #CC0000;
   height: auto;
 }
 
-.fa .fa-window-close-o {
-  border-style:hidden !important;
+.fa-envelope, .fa-user, .fa-lock {
+  color: $danger;
+}
+
+.btn-link, a {
+  text-decoration: none !important;
 }
