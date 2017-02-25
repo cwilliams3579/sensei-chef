@@ -1,19 +1,23 @@
-
+<div class="pagination-container">
+  <div class="pagination">
+    <%= will_paginate(@chefs, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+  </div>
+</div>
   <!--Author box-->
 <% @chefs.each do |chef| %>
   <div class="author-box">
       <!--Name-->
-      <h3 class="h3-responsive text-center"><%= chef.chefname %></h3>
+      <hr>
+      <h3 class="h3-responsive text-center"><%= link_to chef.chefname.capitalize, chef_path(chef) %></h3>
       <hr>
       <div class="row">
           <!--Avatar-->
           <div class="col-12 col-sm-2">
-              <img src="http://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" class="img-fluid rounded-circle z-depth-2">
-              <%#= gravatar_for(@chef.email, class: "img-fluid rounded-circle z-depth-2") %>
+              <%= link_to gravatar_for(chef), chef_path(chef) %>
           </div>
           <!--Author Data-->
           <div class=" col-12 col-sm-10">
-              <p><strong>John Doe</strong></p>
+              <p><strong><%= pluralize(chef.recipes.count, "recipe") if chef.recipes %></strong></p>
               <div class="personal-sm">
                   <a class="email-ic"><i class="fa fa-home"> </i></a>
                   <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
@@ -22,11 +26,20 @@
                   <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
                   <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
               </div>
-              <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-              <p class="hidden-md-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint esse nulla quia quam veniam commodi dicta, iusto inventore. Voluptatum pariatur eveniet ea, officiis vitae praesentium beatae quas libero, esse facere.
+              <p class="hidden-md-down"><%= chef.recipes.last %>
               </p>
           </div>
       </div>
   </div>
 <% end %>
+<br>
+<div class="pagination-container">
+  <div class="pagination">
+    <%= will_paginate(@chefs, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+  </div>
+</div>
+
+
+
   <!--/.Author box-->
+  <%= console %>

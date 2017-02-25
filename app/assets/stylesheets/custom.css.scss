@@ -91,3 +91,29 @@ $danger: #CC0000;
 .btn-link, a {
   text-decoration: none !important;
 }
+
+
+.pagination {
+  margin: 0 auto !important;
+}
+
+
+.pagination a, .pagination span, .pagination em {
+  position: relative;
+  // float: left;
+  padding: 7px 12px;
+  margin-left: -1px;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  color: #4078c0;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}

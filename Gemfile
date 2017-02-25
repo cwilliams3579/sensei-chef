@@ -26,7 +26,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'chartkick'
 gem 'searchkick'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
-gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
+gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
