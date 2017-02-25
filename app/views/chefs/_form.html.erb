@@ -1,5 +1,5 @@
 <!--Form with header-->
-<div class="card">
+<div class="card wow fadeInRightBig">
   <div class="card-block">
     <!--Header-->
     <div class="form-header red-gradient">
@@ -8,20 +8,20 @@
     <!--Body-->
     <%= form_for @chef, :html => { :role => 'form'} do |f| %>
     <div class="md-form">
-      <i class="fa fa-user prefix"></i>
+      <i class="fa fa-user prefix faa-tada animated"></i>
       <%= f.text_field :chefname, autofocus: true, placeholder: "Enter your name", class: "form-control" %>
     </div>
 
     <div class="md-form">
-      <i class="fa fa-envelope prefix"></i>
+      <i class="fa fa-envelope prefix  faa-tada animated"></i>
       <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
     </div>
     <div class="md-form">
-      <i class="fa fa-lock prefix"></i>
+      <i class="fa fa-lock prefix faa-tada animated"></i>
       <%= f.password_field :password, class: 'form-control', placeholder: "Create password" %>
     </div>
     <div class="md-form">
-      <i class="fa fa-lock prefix"></i>
+      <i class="fa fa-lock prefix faa-tada animated"></i>
       <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
     </div>
     <%= f.submit 'Create Account', :class => 'btn btn-danger btn-block btn-lg' %><br>

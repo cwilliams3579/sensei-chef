@@ -45,8 +45,12 @@
                     </div>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="Remove item">X
-                    </button>
+                  <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
+                    <div class="btn-group btn-group-sm">
+                      <%= link_to "Edit this recipe", edit_recipe_path(recipe), class: "btn btn-warning btn-sm" %>
+                      <%= link_to "Delete this recipe", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+                    </div>
+                  <% end %>
                 </td>
             </tr>
           <% end %>

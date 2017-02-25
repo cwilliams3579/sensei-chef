@@ -1,15 +1,5 @@
 /* YOUR CUSTOM STYLES */
 
-.jumbotron-home {
-	background: url("http://mdbootstrap.com/img/Photos/Horizontal/Food/full%20page/1.jpg")no-repeat center center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 50vh;
-	border-radius: 20px;
-	padding: 10px;
-}
 
 .full-bg-img {
 	color: #fff;

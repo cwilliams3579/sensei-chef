@@ -117,3 +117,26 @@ $danger: #CC0000;
   background: #fff;
   border: 1px solid #e5e5e5;
 }
+
+
+.search {
+    margin-left: 400px;
+}
+
+// .container-fluid {
+//   .jumbotron-home{
+//     width: 700px;
+//   }
+// }
+
+.jumbotron-home {
+	background: url("http://mdbootstrap.com/img/Photos/Horizontal/Food/full%20page/1.jpg")no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;
+  width: 100%;
+	border-radius: 20px;
+	padding: 10px;
+}

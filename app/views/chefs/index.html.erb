@@ -14,6 +14,13 @@
           <!--Avatar-->
           <div class="col-12 col-sm-2">
               <%= link_to gravatar_for(chef), chef_path(chef) %>
+              <span class="glyphicons glyphicons-bomb">
+                <% if logged_in? && current_chef.admin? && !chef.admin? %>
+                  <%= link_to 'Delete this chef', chef_path(chef),
+                                method: :delete, data: { confirm: "Are you sure?" },
+                                class: "btn btn-danger btn-sm" %>
+                  <% end %>
+              </span>
           </div>
           <!--Author Data-->
           <div class=" col-12 col-sm-10">
@@ -26,8 +33,11 @@
                   <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
                   <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
               </div>
-              <p class="hidden-md-down"><%= chef.recipes.last %>
+              <p class="hidden-md-down">
+                <%#= chef.recipes %>
               </p>
+
+
           </div>
       </div>
   </div>
@@ -39,7 +49,4 @@
   </div>
 </div>
 
-
-
   <!--/.Author box-->
-  <%= console %>
