@@ -9,7 +9,7 @@ class Chef < ApplicationRecord
   validates :password, presence: true, length: { in: 6..20 }
 
   has_many :recipes, dependent: :destroy
-
+  has_many :comments, dependent: :destroy
   before_save do
    self.email.downcase!
    self.chefname.capitalize!
