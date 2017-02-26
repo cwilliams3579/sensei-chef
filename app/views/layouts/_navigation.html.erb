@@ -1,68 +1,67 @@
-<!--Navbar-->
-<nav class="navbar fixed-top navbar-toggleable-md scrolling-navbar navbar-dark bg-primary">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#">
-          <%= link_to "Sensei Chef", root_path, class: 'navbar-brand' %>
-        </a>
-        <div class="collapse navbar-collapse" id="navbarNav1">
-            <ul class="navbar-nav ">
-                <li class="nav-item">
-                    <%= link_to "Chefs", chefs_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to "Recipes", recipes_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                    <%= render 'layouts/navigation_links', class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                  <%= render 'layouts/nav_links_for_auth', class: "nav-link" %>
-                </li>
-                <li class="nav-item dropdown btn-group">
-                   <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ingredients</a>
-                   <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-                     <a class="dropdown-item" href="#"><%= link_to "All Ingredients", ingredients_path %></a>
-                     <a class="dropdown-item" href="#"><%= link_to "New recipe", new_recipe_path %></a>
-                   </div>
-               </li>
-                <!-- Split button -->
-                <ul class="nav navbar-nav navbar-right search">
-                  <li>
-                    <%= form_tag search_recipes_path, method: :get, class: "form-inline navbar-form navbar-right", role: "search" do %>
-                    <%= text_field_tag :search, params[:search], class: "form-inline waves-effect waves-light form-control" %>
-                  </li>
-                  <li><%= submit_tag "Search", name: nil, class: "btn btn-danger btn-block" %></li>
-                  <% end %>
-                </ul>
-                <% if logged_in? %>
-                  <!-- Split button -->
-                  <div class="btn-group pull-right-sm">
-                    <button type="button" class="btn btn-danger"><%= current_chef.chefname %>'s Profile <%= "Admin" if current_chef.admin? %></button>
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">
-                        <%= link_to "View Profile", chef_path(current_chef), class: "btn btn-danger btn-block btn-sm" %>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <%= link_to "Edit Profile", edit_chef_path(current_chef), class: "btn btn-danger btn-block btn-sm" %>
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <%= link_to "Sign out", logout_path, method: :delete, class: "btn btn-danger btn-block btn-sm" %>
-                      </a>
-                <% else %>
-                        <a class="dropdown-item" href="#"><%= link_to "Sign up", signup_path, class: "btn btn-danger btn-block btn-sm" %></a>
-                        <a class="dropdown-item" href="#"><%= link_to "Sign in", login_path, class: "btn btn-danger btn-block btn-sm" %></a>
-                      </div>
-                  </div>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <!-- Split button -->
+<header class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <%= link_to "myRecipes", root_path, class: "btn btn-lg btn-success", id: "logo" %>
+    <ul class="nav_ul_item">
+      <li class="dropdown">
+          <%#= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            Styles <b class="caret"></b>
+          <%# end %>
+          <ul class='dropdown-menu'>
+            <%# Style.all.each do |style| %>
+              <li><%#= link_to style.name, style_path(style) %></li>
+            <%# end %>
+            <%# if logged_in? %>
+              <li class='divider'></li>
+              <li>
+                <%#= link_to(new_style_path) do %>
+                  New Style
+                <%# end %>
+              </li>
+            <%# end %>
+          </ul>
+        </li>
+    </ul>
+    <ul class="nav_ul_item">
+      <li class="dropdown">
+          <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            Ingredients <b class="caret"></b>
+          <% end %>
+          <ul class='dropdown-menu'>
+            <% Ingredient.all.each do |ingredient| %>
+              <li><%= link_to ingredient.name, ingredient_path(ingredient) %></li>
+            <% end %>
+            <% if logged_in? %>
+              <li class='divider'></li>
+              <li>
+                <%= link_to(new_ingredient_path) do %>
+                  New Ingredient
                 <% end %>
-              </ul>
-        </div>
-</nav>
-<!--/.Navbar-->
-<br><br><br><br>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+    </ul>
+    <% if logged_in? %>
+      <div class="nav_item">
+        <%= link_to "New Recipe", new_recipe_path, class: "btn btn-default btn-warning" %>
+      </div>
+      <ul class="nav_item">
+        <li class="dropdown">
+          <%= link_to '#', class: "btn btn-default btn-danger dropdown-toggle", "data-toggle" => "dropdown" do %>
+            <%= current_chef.chefname %> <b class="caret"></b>
+          <% end %>
+          <ul class='dropdown-menu'>
+            <li><%= link_to "View Profile", chef_path(current_chef) %></li>
+            <li><%= link_to "Edit Profile", edit_chef_path(current_chef) %></li>
+            <li class="divider"></li>
+            <li><%= link_to "Logout", logout_path %></li>
+          </ul>
+        </li>
+      </ul>
+    <% else %>
+      <div class="nav_item">
+        <%= link_to "Log in", login_path, class: "btn btn-default btn-success" %>
+      </div>
+    <% end %>
+  </div>
+</header>

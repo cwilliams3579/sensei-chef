@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
   end
 
   def new
-
+    @ingredient = Ingredient.new
   end
 
   def create
@@ -31,7 +31,7 @@ class IngredientsController < ApplicationController
 
   def update
     if @ingredient.update(ingredient_params)
-      flash[:success] = "Ingredient name was updated successfully"
+      flash[:success] = "Ingredient was updated successfully"
       redirect_to @ingredient
     else
       render 'edit'
