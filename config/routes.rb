@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   # post '/chefs' => 'chefs#new'
+
+  mount ActionCable.server => '/cable'
+  get '/chat', to: 'chatrooms#show'
+
+  resources :messages, only: [:create]
 end

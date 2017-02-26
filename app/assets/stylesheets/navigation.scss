@@ -37,7 +37,7 @@ nav ul li {
 nav ul li a {
 	color:#fff;
 	display:inline-block;
-	padding:1em 3em;
+	padding: 1em 2em;
 	text-decoration:none !important;
 	// border-bottom:2px solid #fff;
 	transition-property:all .2s linear 0s;
@@ -92,7 +92,7 @@ nav ul li a:hover {
 	top:0;
 	height:100%;
 	width:100%;
-	background:#CC0000;
+	background: $primary-red;
 	overflow:auto;
 	z-index:99;
 }

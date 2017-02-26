@@ -47,7 +47,7 @@
             <h1 class="section-heading">Leave a reply </h1>
             <p class="text-center">(Logged In User)</p>
             <!--Third row-->
-            <%= form_for([@recipe, @comment], :html => {class: "form-horizontal",  role: "form"}) do |f| %>
+            <%= form_for([@recipe, @comment], remote: true, :html => {class: "form-horizontal",  role: "form"}) do |f| %>
             <div class="row">
                 <!--Image column-->
                 <div class="col-sm-2 col-12">
@@ -79,9 +79,11 @@
   <!--/.Author box-->
   <% if @recipe.comments != 0 %>
     <div class="section-heading">
-        <h3>Comments <span class="badge blue"><%= @recipe.comments.count %></span></h3>
+        <h3>Comments <span class="badge red"><%= @recipe.comments.count %></span></h3>
     </div><br><br>
-    <%= render partial: 'comments/comments', object: @comments %>
+    <div id="messages">
+      <%= render partial: 'comments/comments', object: @comments %>
+    </div>
     <% else %>
     <h3>No Comments Yet</h3>
   <% end %>
