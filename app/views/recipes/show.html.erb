@@ -22,7 +22,7 @@
         <div class="row">
           <!--Avatar-->
           <div class="col-12 col-sm-2">
-            <%= link_to gravatar_for(@recipe.chef), recipes_path %>
+            <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
           </div>
           <!--Author Data-->
           <div class=" col-12 col-sm-10">

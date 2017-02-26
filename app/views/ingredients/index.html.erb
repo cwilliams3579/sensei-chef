@@ -1,0 +1,50 @@
+<%= render 'shared/page_title', title: "Available Ingredients" %>
+<div class="pagination-container">
+  <div class="pagination">
+    <%= will_paginate(@ingredients, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+  </div>
+</div>
+  <!--Author box-->
+<% @ingredients.each do |ing| %>
+  <div class="author-box">
+      <!--Name-->
+      <hr>
+      <h3 class="h3-responsive text-center"><%= link_to ing.name.capitalize, ingredient_path(ing) %></h3>
+      <hr>
+      <div class="row">
+          <!--Avatar-->
+          <div class="col-12 col-sm-2">
+              <span class="glyphicons glyphicons-bomb">
+                <% if logged_in? && current_chef.admin? %>
+                  <li><%= link_to "Edit this ingredient", edit_ingredient_path(ing) %></li>
+                <% end %>
+              </span>
+          </div>
+          <!--Author Data-->
+          <div class=" col-12 col-sm-10">
+              <p><strong><%= pluralize(ing.recipes.count, "recipe") if ing.recipes %></strong></p>
+              <!-- <div class="personal-sm">
+                  <a class="email-ic"><i class="fa fa-home"> </i></a>
+                  <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
+                  <a class="tw-ic"><i class="fa fa-twitter"> </i></a>
+                  <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
+                  <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
+                  <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
+              </div> -->
+              <p class="hidden-md-down">
+                <%#= chef.recipes %>
+              </p>
+
+
+          </div>
+      </div>
+  </div>
+<% end %>
+<br>
+<div class="pagination-container">
+  <div class="pagination">
+    <%= will_paginate(@ingredients, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+  </div>
+</div>
+
+  <!--/.Author box-->
