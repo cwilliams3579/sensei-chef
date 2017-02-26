@@ -1,12 +1,14 @@
+<%= render 'shared/errors', obj: @chef %>
 <!--Form with header-->
 <div class="card wow fadeInRightBig">
   <div class="card-block">
     <!--Header-->
     <div class="form-header red-gradient">
+      <br><br>
         <h3 class="text-center">Sign Up</h3>
     </div>
     <!--Body-->
-    <%= form_for @chef, :html => { :role => 'form'} do |f| %>
+    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     <div class="md-form">
       <i class="fa fa-user prefix faa-tada animated"></i>
       <%= f.text_field :chefname, autofocus: true, placeholder: "Enter your name", class: "form-control" %>
