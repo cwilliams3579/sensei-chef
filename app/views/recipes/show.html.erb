@@ -1,62 +1,88 @@
 
-<!--Section: Blog v.4-->
-<section class="section section-blog-fw">
+<div class="container">
+  <!--Author box-->
+  <div class="author-box">
 
-  <hr>
-
-  <!--First row-->
-  <div class="row">
-    <div class="col-md-12">
-      <!--Featured image-->
-      <div class="view overlay hm-white-slight">
-        <!-- <img src="https://mdbootstrap.com/img/Photos/Slides/img%20(54).jpg"> -->
-        <a>
-          <div class="mask "></div>
-        </a>
-      </div><br><br>
-
-      <!--Author box-->
-      <div class="author-box">
-        <!--Name-->
-        <%= render 'shared/page_title', title: @recipe.name %>
-        <div class="row">
+      <!--Name-->
+      <hr>
+      <h3 class="h3-responsive text-center"><%= render 'shared/page_title', title: @recipe.name %></h3>
+      <div class="row">
           <!--Avatar-->
           <div class="col-12 col-sm-2">
-            <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
+              <%= link_to gravatar_for(@recipe.chef), chef_path(@recipe.chef) %>
           </div>
           <!--Author Data-->
           <div class=" col-12 col-sm-10">
-            <p><strong><%= @recipe.chef.chefname.capitalize %></strong></p>
-            <p class="pull-right"><%= time_ago_in_words(@recipe.created_at) %> ago</p><br>
-            <div class="personal-sm">
-              <a class="email-ic"><i class="fa fa-home"> </i></a>
-              <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
-              <a class="tw-ic"><i class="fa fa-twitter"> </i></a>
-              <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
-              <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
-              <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
-            </div>
-            <p class="hidden-md-down">
-              <%= simple_format(@recipe.description) %>
-            </p>
-            <hr>
-            <% if @recipe.ingredients.any? %>
-              <p>Ingredients: <%= render @recipe.ingredients %></p>
-            <% end %>
+              <p><strong><%= @recipe.chef.chefname.capitalize %></strong></p>
+              <p><%= time_ago_in_words(@recipe.created_at) %> ago</p>
+              <div class="personal-sm">
+                  <a class="email-ic"><i class="fa fa-home"> </i></a>
+                  <a class="fb-ic"><i class="fa fa-facebook"> </i></a>
+                  <a class="tw-ic"><i class="fa fa-twitter"> </i></a>
+                  <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
+                  <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
+                  <a class="email-ic"><i class="fa fa-envelope-o"> </i></a><br><br>
+                  <% if @recipe.ingredients.any? %>
+                    <p>Ingredients: <%= render @recipe.ingredients %></p>
+                  <% end %>
+              </div>
+              <p class="hidden-md-down">
+                <%= simple_format(@recipe.description) %>
+              </p>
+              <div class="btn-group">
+                <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
+                <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning", data: { confirm: "Are you sure you wanna edit this recipe?" } %>
+                <%= link_to "Destroy this recipe", recipe_path(@recipe), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+                <% end %>
+                <%= link_to "Return to recipes listing", recipes_path, class: "btn btn-sm btn-link" %>
+              </div>
           </div>
-        </div>
       </div>
-      <!--/.Author box-->
-    </div>
   </div>
-  <!--/First row-->
-  <div class="btn-group">
-  <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
-    <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning", data: { confirm: "Are you sure you wanna edit this recipe?" } %>
-    <%= link_to "Destroy this recipe", recipe_path(@recipe), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+  <% if logged_in? %>
+    <!--Section: Leave a reply (Logged In User)-->
+    <section>
+        <!--Leave a reply form-->
+        <div class="reply-form">
+            <h1 class="section-heading">Leave a reply </h1>
+            <p class="text-center">(Logged In User)</p>
+            <!--Third row-->
+            <%= form_for([@recipe, @comment], :html => {class: "form-horizontal",  role: "form"}) do |f| %>
+            <div class="row">
+                <!--Image column-->
+                <div class="col-sm-2 col-12">
+                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg">
+                </div>
+                <!--/.Image column-->
+
+                <!--Content column-->
+                <div class="col-sm-10 col-12">
+                    <div class="md-form">
+                        <%= f.text_area :description, input_html: { class: "md-textarea" } %>
+                    </div>
+                </div>
+                <!--Content column-->
+
+                <div class="text-center">
+                    <%= f.button "Submit", class: "btn btn-danger", data: {disable_with: "<i class='fa fa-spinner fa-spin fa-2x'></i> Processing..."} %>
+                </div>
+                <!--/.Content column-->
+              </div>
+            <% end %>
+            <!--/.Third row-->
+        </div>
+        <!--/.Leave a reply form-->
+
+    </section>
+    <!--/Section: Leave a reply (Logged In User)-->
   <% end %>
-  <%= link_to "Return to recipes listing", recipes_path, class: "btn btn-sm btn-link" %>
-  </div>
-  <hr>
-</section><br><br><br><br>
-<!--/Section: Blog v.4-->
+  <!--/.Author box-->
+  <% if @recipe.comments != 0 %>
+    <div class="section-heading">
+        <h3>Comments <span class="badge blue"><%= @recipe.comments.count %></span></h3>
+    </div><br><br>
+    <%= render partial: 'comments/comments', object: @comments %>
+    <% else %>
+    <h3>No Comments Yet</h3>
+  <% end %>
+</div>

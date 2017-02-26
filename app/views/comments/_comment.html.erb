@@ -1,0 +1,24 @@
+<div class="comments-list text-left">
+
+    <!--First row-->
+    <div class="row">
+        <!--Image column-->
+        <div class="col-sm-2 col-12">
+            <%= gravatar_for(comment.chef, size: 150) %>
+        </div>
+        <!--/.Image column-->
+        <!--Content column-->
+        <div class="col-sm-10 col-12">
+            <a><h3 class="user-name"><%= comment.chef.chefname %></h3></a>
+            <div class="card-data">
+                <ul>
+                    <li class="comment-date"><i class="fa fa-clock-o"></i> <%= time_ago_in_words(comment.created_at) %> ago</li>
+                </ul>
+            </div>
+            <p class="comment-text" id="messages"><%= comment.description %></p>
+        </div>
+        <!--/.Content column-->
+    </div>
+    <!--/.First row-->
+</div>
+<!--/.Main wrapper-->
