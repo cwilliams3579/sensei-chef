@@ -8,13 +8,13 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h3 class="w-100 center"><i class="fa fa-pencil"></i> Sign up</h3>
+                <h3 class="w-100"><i class="fa fa-pencil faa-wrench animated"></i></h3>
                 <div class="flex-row">
-                    <a href="" class="btn-floating btn-fb btn-small"><i class="fa fa-facebook"></i></a>
-                    <a href="" class="btn-floating btn-tw btn-small"><i class="fa fa-twitter"></i></a>
-                    <a href="" class="btn-floating btn-gplus btn-small"><i class="fa fa-google-plus"></i></a>
-                    <a href="" class="btn-floating btn-li btn-small"><i class="fa fa-linkedin"></i></a>
-                    <a href="" class="btn-floating btn-git btn-small"><i class="fa fa-github"></i></a>
+                    <a href="" class="btn-floating btn-fb btn-small faa-bounce animated-hover" style="align:left;"><i class="fa fa-facebook"></i></a>
+                    <a href="" class="btn-floating btn-tw btn-small faa-bounce animated-hover"><i class="fa fa-twitter"></i></a>
+                    <a href="" class="btn-floating btn-gplus btn-small faa-bounce animated-hover"><i class="fa fa-google-plus"></i></a>
+                    <a href="" class="btn-floating btn-li btn-small faa-bounce animated-hover"><i class="fa fa-linkedin"></i></a>
+                    <a href="" class="btn-floating btn-git btn-small faa-bounce animated-hover"><i class="fa fa-github"></i></a>
                 </div>
             </div>
             <!--Body-->
@@ -22,46 +22,29 @@
               <form class="" action="/chefs" method="post">
                 <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
                 <div class="md-form">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="first_name" name="user[first_name]" class="form-control">
-                    <label for="form2">First Name</label>
+                    <input type="text" id="chefname" name="chef[chefname]" class="form-control" placeholder="Enter chef name">
                 </div>
                 <div class="md-form">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="last_name" name="user[last_name]" class="form-control">
-                    <label for="form2">Last Name</label>
-                </div>
-                <div class="md-form">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="email" name="user[email]" class="form-control">
-                    <label for="form2">Your email</label>
+                    <input type="text" id="email" name="chef[email]" class="form-control" placeholder="john@example.com">
                 </div>
 
                 <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="password" name="user[password]" class="form-control">
-                    <label for="form3">Your password</label>
+                    <input type="password" id="password" name="chef[password]" class="form-control" placeholder="Create password">
                 </div>
 
                 <div class="md-form">
-                    <i class="fa fa-lock prefix"></i>
-                    <input type="password" id="password_confirmation" name="user[password_confirmation]" class="form-control">
-                    <label for="form4">Repeat password</label>
+                    <input type="password" id="password_confirmation" name="chef[password_confirmation]" class="form-control" placeholder="Repeat password">
                 </div>
 
                 <div class="text-center">
-                    <input type="submit" value="Sign Up" class="btn btn-danger btn-lg"/>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" name="" value="Remember me">
-                    </fieldset>
+                    <input type="submit" value="Sign Up" class="btn btn-danger btn-block btn-lg"/>
                 </div>
               </form>
             </div>
             <!--Footer-->
             <div class="modal-footer">
                 <div class="options">
-                    <p>Already have an account? <a href="#">Log in</a></p>
+                    <p>Already have an account? <a href="/login">Log in</a></p>
                 </div>
                 <i type="button" class="fa fa-times fa-2x text-danger" aria-hidden="true" data-dismiss="modal"></i>
             </div>

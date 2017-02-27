@@ -46,8 +46,8 @@
                 <td>
                   <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
                     <div class="btn-group btn-group-sm">
-                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil fa-2x faa-shake animated-hover" %>
-                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-2x faa-tada animated-hover" %>
+                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil fa-2x faa-shake animated-hover", style: "color:#FFB841;" %>
+                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-2x faa-tada animated-hover", :style => "color: red;" %>
                     </div>
                   <% end %>
                 </td>

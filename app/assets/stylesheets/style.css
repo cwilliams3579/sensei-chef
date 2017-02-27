@@ -51,6 +51,14 @@ input[type="text"]:focus:not([readonly])+label {
 
 }
 
+.fa-pencil {
+  color: #FFB841 !important;
+}
+
+.fa-trash {
+  color: $primary-red;
+}
+
 li {
   text-decoration: none;
 }

@@ -16,7 +16,7 @@ class ChefsController < ApplicationController
     if @chef.save
       session[:chef_id] = @chef.id
       cookies.signed[:chef_id] = @chef.id
-      flash[:success] = "Welcome #{@chef.chefname} to the Sensei Chef App!"
+      flash[:notice] = "Welcome #{@chef.chefname} to the Sensei Chef App!"
       redirect_to chef_path(@chef)
     else
       flash.now[:danger] = "Account was not created"

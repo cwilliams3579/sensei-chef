@@ -13,11 +13,10 @@
       <li><%= link_to "Log in", login_path %></li>
     <% end %>
     <%= render 'layouts/register' %>
-    <%#= render 'layouts/login' %>
     <li>
       <%= form_tag search_recipes_path, method: :get, class: "form-inline navbar-form navbar-right", role: "search" do %>
       <p><%= text_field_tag :search, params[:search], class: "form-inline waves-effect waves-light" %></p>
-      <%= submit_tag "Search", name: nil, class: "btn btn-danger nav-btn" %>
+      <%= submit_tag "Search", name: nil, class: "fa fa-search" %>
       <% end %>
     </li>
   </ul>
@@ -30,10 +29,10 @@
     <ul class="wrap-nav">
       <li><a href="/chefs">Chefs</a>
         <ul>
-          <li><a href="/chefs">Apartments</a></li>
+          <li><a href="/recipes">Recipes</a></li>
         </ul>
       </li>
-      <li><a href="/recipes">Recipes</a>
+      <li><a href="/ingredients">Ingredients</a>
         <ul>
           <% Recipe.all.each do |recipe| %>
           <li><%= link_to recipe.name, recipes_path(recipe: recipe.name) %></li>
