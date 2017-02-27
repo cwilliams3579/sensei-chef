@@ -4,16 +4,15 @@
   <div class="messages" id="messages">
     <%= render @messages %>
   </div>
-    <hr>
+    <br>
   <!--Section: Leave a reply (Logged In User)-->
   <section>
 
       <!--Leave a reply form-->
       <div class="reply-form">
         <div class="center">
-          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg">
-          <%#= gravatar_for(@message.chef.chefname) %>
-        </div>
+          <%= link_to gravatar_for(@chef), chef_path(@chef) %>
+        </div><br>
           <h1 class="section-heading">Leave a reply <i class="fa fa-pencil faa-horizontal animated"></i></h1>
           <p class="text-center"></p>
 

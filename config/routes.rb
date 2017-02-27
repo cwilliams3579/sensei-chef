@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # devise_for :users, :controllers => { registrations: 'registrations'}
   root to: 'pages#home'
 
   resources :chefs, except: [:new]
@@ -9,6 +8,9 @@ Rails.application.routes.draw do
       get 'search'
     end
     resources :comments, only: [:create]
+    member do
+      post 'like'
+    end
   end
 
   get '/signup', to: 'chefs#new'

@@ -29,7 +29,8 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
-gem 'devise'
+gem 'aws-sdk', '~> 2.7', '>= 2.7.15'
+gem 'jquery-datatables-rails', '~> 3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'high_voltage'
 group :development do

@@ -22,6 +22,16 @@
                   <a class="gplus-ic"><i class="fa fa-google-plus"> </i></a>
                   <a class="li-ic"><i class="fa fa-linkedin"> </i></a>
                   <a class="email-ic"><i class="fa fa-envelope-o"> </i></a><br><br>
+                  <div class="row liking">
+                    <div class="row col-md-8 col-md-offset-2">
+                      <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
+                        <i class="fa fa-thumbs-up fa-2x faa-vertical animated" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= @recipe.thumbs_up_total %></span>
+                      <% end %> &nbsp;
+                      <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
+                        <i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @recipe.thumbs_down_total %></span>
+                      <% end %>
+                    </div>
+                  </div>
                   <% if @recipe.ingredients.any? %>
                     <p>Ingredients: <%= render @recipe.ingredients %></p>
                   <% end %>

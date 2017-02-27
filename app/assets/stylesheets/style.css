@@ -1,5 +1,6 @@
 /* YOUR CUSTOM STYLES */
 
+$primary-red: #CC0000;
 
 .full-bg-img {
 	color: #fff;
@@ -26,4 +27,26 @@ input[type="text"]:not([readonly])+label {
 
 input[type="text"]:focus:not([readonly])+label {
 	/*color:#fff;*/
+}
+
+.green {
+ background: #00C851 !important;
+}
+
+.fa-exclamation-triangle {
+	color: $primary-red !important;
+}
+
+.faa-flash.animated, .faa-flash.animated-hover:hover, .faa-parent.animated-hover:hover>.faa-flash {
+    -webkit-animation: flash 5s ease infinite;
+    animation: flash 5s ease infinite;
+    color: $primary-red !important;
+}
+
+
+.recipe-actions {
+	.fa-bomb {
+		color: $primary-red !important;
+	}
+	
 }

@@ -8,26 +8,29 @@
       <div class="card-block">
       <!--Header-->
       <div class="form-header red-gradient">
-        <h3> Recipe</h3>
+        <h3 class="faa-pulse animated"> Recipe</h3>
       </div>
 
       <!--Body-->
       <%= form_for(@recipe, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
         <div class="md-form">
-          <i class="fa fa-book prefix"></i>
-          <%= f.text_field :name, input_html: { class: "form-control", placeholder: "Enter recipe name", autofocus: true } %>
+          <i class="fa fa-book prefix faa-pulse animated"></i>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter recipe name", autofocus: true %>
         </div>
-
-        <div class="form-inline">
-          <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+        <div class="md-form">
+          <i class="fa fa-camera-retro fa-2x faa-pulse animated" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+          <%= f.file_field(:image, accept: 'image/png,image/gif,image/jpeg') %>
+        </div>
+        <div class="form-inline mdb-select">
+          <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
             <fieldset class="form-group">
-              <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+              <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox mdb-select") + cb.text} %>
             </fieldset>
           <% end %>
         </div>
         <div class="md-form">
-          <i class="fa fa-pencil prefix"></i>
-          <%= f.text_area :description, rows: 10, input_html: { class: "form-control" } %>
+          <i class="fa fa-pencil prefix faa-horizontal animated"></i>
+          <%= f.text_area :description, class: "form-control" %>
         </div>
         <div class="md-form">
           <%= f.button class: "btn btn-danger btn-lg btn-block", data: {disable_with: "<i class='fa fa-spinner fa-spin fa-2x'></i> Processing..."} %>

@@ -17,21 +17,21 @@
       </p>
       <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="recipe-actions">
-          <%= link_to "Edit this recipe", edit_recipe_path(recipe), class: "btn btn-xs btn-warning" %>
-          <%= link_to "Delete this recipe", recipe_path(recipe), method: :delete,
+          <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil faa-horizontal animated fa-2x" %>&nbsp;&nbsp;
+          <%= link_to "", recipe_path(recipe), method: :delete,
                                         data: { confirm: "Are you sure you want to delete this recipe?" },
-                                        class: "btn btn-xs btn-danger" %>
+                                        class: "fa fa-bomb faa-flash animated fa-2x bomb" %>
         </div>
       <% end %>
       <hr>
       <div class="row">
         <div class="pull-right liking">
-          <%#= link_to like_recipe_path(recipe, like: true), method: :post do %>
-            <i class="glyphicon glyphicon-thumbs-up"></i>
-          <%# end %> <%#= recipe.thumbs_up_total %>
-          <%#= link_to like_recipe_path(recipe, like: false), method: :post do %>
-            <i class="glyphicon glyphicon-thumbs-down"></i>
-          <%# end %> <%#= recipe.thumbs_down_total %>
+          <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
+            <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover"></i>
+          <% end %> <span class="badge white text-success"><%= recipe.thumbs_up_total %></span>&nbsp;&nbsp;
+          <%= link_to like_recipe_path(recipe, like: false), method: :post do %>
+            <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover"></i>
+          <% end %> <span class="badge white text-danger"><%= recipe.thumbs_down_total %></span>
         </div>
       </div>
     </div>

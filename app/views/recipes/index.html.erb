@@ -1,18 +1,18 @@
-<p><%= link_to 'Chefs:', chefs_path %> <%= User.count %> registered</p>
+<p><%= link_to 'Chefs:', chefs_path %> <%= Chef.count %> registered</p>
 <p><%= render 'shared/page_title', title: "All Recipes" %> </p>
 <!--Shopping Cart table-->
-<div class="table-responsive">
-    <table class="table product-table">
+<div class="table-responsive text-center">
+    <table class="table product-table myTable">
         <!--Table head-->
         <thead>
             <tr class="text-center">
-                <th>Recipe</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Chef</th>
-                <th>Created</th>
-                <th>Likes</th>
-                <th>Actions</th>
+                <th class="center faa-float animated-hover">Recipe</th>
+                <th class="center faa-float animated-hover">Name</th>
+                <th class="center faa-float animated-hover">Description</th>
+                <th class="center faa-float animated-hover">Chef</th>
+                <th class="center faa-float animated-hover">Created</th>
+                <th class="center faa-float animated-hover">Likes</th>
+                <th class="center faa-float animated-hover">Actions</th>
             </tr>
         </thead>
         <!--/Table head-->
@@ -24,11 +24,11 @@
           <% @recipes.each do |recipe| %>
             <tr>
                 <th scope="row">
-                  <%= image_tag(recipe.image.url, size: "150x100") if recipe.image? %>
+                  <%= link_to image_tag(recipe.image.url, size: "150x100", class: "faa-pulse animated-hover"), recipe_path(recipe) if recipe.image? %>
                 </th>
-                <td><strong><%= link_to recipe.name, recipe_path(recipe), class: "text-danger" %></strong><br></td>
+                <td><strong><%= link_to recipe.name, recipe_path(recipe), class: "text-danger faa-float animated-hover" %></strong><br></td>
 
-                    <td><%= truncate(recipe.description, length: 100) %></td>
+                    <td><%= truncate(recipe.description, length: 80) %></td>
                 <td>
                   <p><%= link_to recipe.chef.chefname.capitalize %></p>
                 </td>
@@ -36,19 +36,19 @@
                 <td>
                     <span class="qty"> </span>
                     <div class="btn-group" data-toggle="buttons">
-                        <label class="btn btn-sm btn-danger btn-rounded">
-                            <input type="radio" name="options" id="option1">&mdash;
-                        </label>
-                        <label class="btn btn-sm btn-danger btn-rounded">
-                            <input type="radio" name="options" id="option2">+
-                        </label>
+                      <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
+                        <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= recipe.thumbs_up_total %></span>
+                      <% end %>
+                      <%= link_to like_recipe_path(recipe, like: false), method: :post do %>
+                        <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= recipe.thumbs_down_total %></span>
+                      <% end %>
                     </div>
                 </td>
                 <td>
                   <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
                     <div class="btn-group btn-group-sm">
-                      <%= link_to "Edit this recipe", edit_recipe_path(recipe), class: "btn btn-warning btn-sm" %>
-                      <%= link_to "Delete this recipe", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm" %>
+                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil faa-shake animated" %>
+                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-exclamation-triangle faa-flash animated" %>
                     </div>
                   <% end %>
                 </td>
