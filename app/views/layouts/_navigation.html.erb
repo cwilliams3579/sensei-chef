@@ -2,23 +2,23 @@
   <ul>
     <li><%= link_to 'Sensei Chef', root_path %></li>
     <li><%= link_to "Chefs", chefs_path %></li>
-    <li><%= link_to "All Recipes", recipes_path %></li>
+    <li><%= link_to "Recipes", recipes_path %></li>
     <li><a href="/pages/about">About</a></li>
+    <li>
+
+    </li>
     <% if logged_in? %>
       <li><%= link_to "ChefChat", chat_path %></li>
-      <li><%= link_to "View your profile", chef_path(current_chef) %></li>
-      <li><%= link_to "Edit your profile", edit_chef_path(current_chef) %></li>
+      <li><%= link_to "View profile", chef_path(current_chef) %></li>
+      <li><%= link_to "Edit profile", edit_chef_path(current_chef) %></li>
       <li><%= link_to "Log out", logout_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "Log in", login_path %></li>
     <% end %>
+
+
     <%= render 'layouts/register' %>
-    <li>
-      <%= form_tag search_recipes_path, method: :get, class: "form-inline navbar-form navbar-right", role: "search" do %>
-      <p><%= text_field_tag :search, params[:search], class: "form-inline waves-effect waves-light" %></p>
-      <%= submit_tag "Search", name: nil, class: "fa fa-search" %>
-      <% end %>
-    </li>
+
   </ul>
   <div class="button">
     <a class="btn-open" href="#"></a>
@@ -78,4 +78,4 @@
 <div class="content">
 
 </div>
-<br><br><br><br><br>
+<br><br><br>

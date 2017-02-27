@@ -21,7 +21,7 @@
                   <% if logged_in? && current_chef.admin? && !chef.admin? %>
                     <%= link_to "", chef_path(chef),
                                   method: :delete, data: { confirm: "Are you sure?" },
-                                  class: "fa fa-trash fa-2x faa-tada animated-hover" %>
+                                  class: "fa fa-trash fa-2x faa-tada animated-hover", toggle:"tooltip", placement:"top", title:"Delete Chef" %>
                     <% end %>
                 </span>
             </div>

@@ -1,7 +1,5 @@
-<%#= will_paginate message %>
 <!--Main wrapper-->
-<div class="comments-list text-left message">
-
+<div class="comments-list text-left smooth-scroll message">
     <!--First row-->
     <div class="row">
         <!--Image column-->
@@ -14,7 +12,7 @@
             <a><h3 class="user-name"><%= message.chef.chefname.capitalize %></h3></a>
             <div class="card-data">
                 <ul>
-                    <li class="comment-date"><i class="fa fa-clock-o faa-tada animated" style="color: blue;"></i>
+                    <li class="comment-date"><i class="fa fa-clock-o faa-tada animated"></i>
                       <small><em>Created <%= time_ago_in_words(message.created_at) %> ago</em></small>
                     </li>
                 </ul>

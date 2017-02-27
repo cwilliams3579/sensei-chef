@@ -46,8 +46,8 @@
                 <td>
                   <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
                     <div class="btn-group btn-group-sm">
-                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil fa-2x faa-shake animated-hover", style: "color:#FFB841;" %>
-                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-2x faa-tada animated-hover", :style => "color: red;" %>
+                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil fa-2x faa-shake animated-hover", toggle:"tooltip", placement:"top", title:"Edit Recipe" %>
+                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-2x faa-tada animated-hover", toggle:"tooltip", placement:"top", title:"Delete Recipe" %>
                     </div>
                   <% end %>
                 </td>
@@ -60,5 +60,3 @@
     </table>
 </div><br>
 <!--/Shopping Cart table-->
-
-<%= pie_chart Recipe.group(:name).count %>

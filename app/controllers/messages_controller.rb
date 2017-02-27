@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   before_action :require_user
 
   def create
+    @messages = Message.paginate(page: params[:page], per_page: 5).order("created_at DESC")
     @message = Message.new(message_params)
     @message.chef = current_chef
     if @message.save

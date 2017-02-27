@@ -90,7 +90,7 @@ class RecipesController < ApplicationController
   def require_user_like
     if !logged_in?
       flash[:danger] = "You must be logged in to perform that action"
-      redirect_to :back
+      redirect_to signup_path
     end
   end
 end
