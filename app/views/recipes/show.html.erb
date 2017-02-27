@@ -58,13 +58,13 @@
                 <!--Content column-->
                 <div class="col-sm-10 col-12">
                     <div class="md-form">
-                        <%= f.text_area :description, input_html: { class: "md-textarea" } %>
+                        <%= f.text_area :description, data: { behavior: "room_speaker" }, class: "md-textarea" %>
                     </div>
                 </div>
                 <!--Content column-->
 
                 <div class="text-center">
-                    <%= f.button "Submit", class: "btn btn-danger", data: {disable_with: "<i class='fa fa-spinner fa-spin fa-2x'></i> Processing..."} %>
+                    <%= f.button "Submit", class: "btn btn-danger", data: { send: "message" } %>
                 </div>
                 <!--/.Content column-->
               </div>
@@ -79,7 +79,7 @@
   <!--/.Author box-->
   <% if @recipe.comments != 0 %>
     <div class="section-heading">
-        <h3>Comments <span class="badge red"><%= @recipe.comments.count %></span></h3>
+        <h3>Comments <span class="badge blue"><%= @recipe.comments.count %></span></h3>
     </div><br><br>
     <div id="messages">
       <%= render partial: 'comments/comments', object: @comments %>

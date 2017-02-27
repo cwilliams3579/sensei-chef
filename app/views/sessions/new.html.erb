@@ -1,27 +1,30 @@
-<!--Form with header-->
-<div class="card wow bounceInDown">
-  <div class="card-block">
-    <!--Header-->
-    <div class="form-header red-gradient">
-        <h3 class="text-center">Sign In</h3>
-    </div>
-    <!--Body-->
-    <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
-      <div class="md-form">
-        <i class="fa fa-envelope prefix faa-shake animated"></i>
-        <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
+<br><br><br>
+<div class="container wow bounceInDown">
+  <!--Form with header-->
+  <div class="card">
+    <div class="card-block">
+      <!--Header-->
+      <div class="form-header red-gradient">
+          <h3 class="text-center">Log In</h3>
       </div>
-      <div class="md-form">
-        <i class="fa fa-lock prefix faa-horizontal animated"></i>
-        <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
-      </div>
+      <!--Body-->
+      <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
+        <div class="md-form">
+          <i class="fa fa-envelope prefix faa-shake animated"></i>
+          <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
+        </div>
+        <div class="md-form">
+          <i class="fa fa-lock prefix faa-horizontal animated"></i>
+          <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
+        </div>
 
-      <%= f.submit 'Sign In', :class => 'btn btn-danger btn-block btn-lg' %><br>
-      <fieldset class="form-group center">
-        <%= link_to "Don't have an account? Sign up now!", signup_path, class: "text-danger" %>
-      </fieldset>
-    <% end %>
+        <%= f.submit 'Log In', :class => 'btn btn-danger btn-block btn-lg' %><br>
+        <fieldset class="form-group center">
+          <%= link_to "Don't have an account? Sign up now!", signup_path, class: "text-danger" %>
+        </fieldset>
+      <% end %>
+    </div>
   </div>
+  <!--/Form with header-->
+
 </div>
-<%= console %>
-<!--/Form with header-->

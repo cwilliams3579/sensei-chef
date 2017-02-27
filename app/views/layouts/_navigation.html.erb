@@ -5,12 +5,12 @@
     <li><%= link_to "All Recipes", recipes_path %></li>
     <li><a href="/pages/about">About</a></li>
     <% if logged_in? %>
-    <li><%= link_to "View your profile", chef_path(current_chef) %></li>
-    <li><%= link_to "Edit your profile", edit_chef_path(current_chef) %></li>
-    <li><%= link_to "Log out", logout_path, method: :delete %></li>
+      <li><%= link_to "ChefChat", chat_path %></li>
+      <li><%= link_to "View your profile", chef_path(current_chef) %></li>
+      <li><%= link_to "Edit your profile", edit_chef_path(current_chef) %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete %></li>
     <% else %>
       <li><%= link_to "Log in", login_path %></li>
-
     <% end %>
     <%= render 'layouts/register' %>
     <%#= render 'layouts/login' %>

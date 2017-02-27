@@ -1,36 +1,38 @@
-<%= render 'shared/errors', obj: @chef %>
-<!--Form with header-->
-<div class="card wow fadeInRightBig">
-  <div class="card-block">
-    <!--Header-->
-    <div class="form-header red-gradient">
-      <br><br>
-        <h3 class="text-center">Sign Up</h3>
-    </div>
-    <!--Body-->
-    <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-    <div class="md-form">
-      <i class="fa fa-user prefix faa-tada animated"></i>
-      <%= f.text_field :chefname, autofocus: true, placeholder: "Enter your name", class: "form-control" %>
-    </div>
+<div class="container">
+  <%= render 'shared/errors', obj: @chef %>
+  <!--Form with header-->
+  <div class="card wow fadeInRightBig">
+    <div class="card-block">
+      <!--Header-->
+      <div class="form-header red-gradient">
+        <br><br>
+          <h3 class="text-center"><i class="fa fa-pencil faa-horizontal animated"></i></h3>
+      </div>
+      <!--Body-->
+      <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="md-form">
+        <i class="fa fa-user prefix faa-tada animated"></i>
+        <%= f.text_field :chefname, autofocus: true, placeholder: "Enter your name", class: "form-control" %>
+      </div>
 
-    <div class="md-form">
-      <i class="fa fa-envelope prefix  faa-tada animated"></i>
-      <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
+      <div class="md-form">
+        <i class="fa fa-envelope prefix  faa-tada animated"></i>
+        <%= f.email_field :email, class: 'form-control', placeholder: "john@example.com" %>
+      </div>
+      <div class="md-form">
+        <i class="fa fa-lock prefix faa-tada animated"></i>
+        <%= f.password_field :password, class: 'form-control', placeholder: "Create password" %>
+      </div>
+      <div class="md-form">
+        <i class="fa fa-lock prefix faa-tada animated"></i>
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
+      </div>
+      <%= f.submit :class => 'btn btn-danger btn-block btn-lg' %><br>
+      <fieldset class="form-group center">
+        <%= link_to "Cancel request and return to recipes listing", recipes_path, class: "text-danger" %>
+      </fieldset>
+      <% end %>
     </div>
-    <div class="md-form">
-      <i class="fa fa-lock prefix faa-tada animated"></i>
-      <%= f.password_field :password, class: 'form-control', placeholder: "Create password" %>
-    </div>
-    <div class="md-form">
-      <i class="fa fa-lock prefix faa-tada animated"></i>
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
-    </div>
-    <%= f.submit 'Create Account', :class => 'btn btn-danger btn-block btn-lg' %><br>
-    <fieldset class="form-group center">
-      <%= link_to "Cancel request and return to recipes listing", recipes_path, class: "text-danger" %>
-    </fieldset>
-    <% end %>
   </div>
+  <!--/Form with header-->
 </div>
-<!--/Form with header-->
