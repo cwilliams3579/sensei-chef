@@ -1,8 +1,9 @@
+<p><%= link_to 'Chefs:', chefs_path %> <%= Chef.count %> registered</p>
 <div class="pagination-container">
   <div class="pagination">
     <%= will_paginate(@chefs, :renderer => WillPaginate::ActionView::LinkRenderer) %>
   </div>
-</div>
+</div><br>
   <!--Author box-->
 <% @chefs.each do |chef| %>
   <div class="author-box">
@@ -16,9 +17,9 @@
               <%= link_to gravatar_for(chef), chef_path(chef) %>
               <span>
                 <% if logged_in? && current_chef.admin? && !chef.admin? %>
-                  <%= link_to 'Delete this chef', chef_path(chef),
+                  <%= link_to "", chef_path(chef),
                                 method: :delete, data: { confirm: "Are you sure?" },
-                                class: "fa fa-bomb fa-2x faa-tada animated" %>
+                                class: "fa fa-trash fa-2x faa-tada animated-hover" %>
                   <% end %>
               </span>
           </div>
@@ -34,9 +35,8 @@
                   <a class="email-ic"><i class="fa fa-envelope-o"> </i></a>
               </div>
                 <p class="hidden-md-down">
-                  <%= chef.recipes %>
+                  <%= %>
                 </p>
-
 
           </div>
       </div>

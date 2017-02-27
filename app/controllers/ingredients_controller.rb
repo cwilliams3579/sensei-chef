@@ -4,6 +4,7 @@ class IngredientsController < ApplicationController
 
   def index
       @ingredients = Ingredient.paginate(page: params[:page], per_page: 5)
+      @recipes = Recipe.all
   end
 
   def show

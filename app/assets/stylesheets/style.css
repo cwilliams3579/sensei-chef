@@ -48,5 +48,9 @@ input[type="text"]:focus:not([readonly])+label {
 	.fa-bomb {
 		color: $primary-red !important;
 	}
-	
+
+}
+
+li {
+  text-decoration: none;
 }

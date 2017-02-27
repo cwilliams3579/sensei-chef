@@ -1,5 +1,4 @@
-<p><%= link_to 'Chefs:', chefs_path %> <%= Chef.count %> registered</p>
-<p><%= render 'shared/page_title', title: "All Recipes" %> </p>
+<p><%= render 'shared/page_title', title: "Recipes" %> </p>
 <!--Shopping Cart table-->
 <div class="table-responsive text-center">
     <table class="table product-table myTable">
@@ -47,8 +46,8 @@
                 <td>
                   <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
                     <div class="btn-group btn-group-sm">
-                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil faa-shake animated" %>
-                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-exclamation-triangle faa-flash animated" %>
+                      <%= link_to "", edit_recipe_path(recipe), class: "fa fa-pencil fa-2x faa-shake animated-hover" %>
+                      <%= link_to "", recipe_path(recipe), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash fa-2x faa-tada animated-hover" %>
                     </div>
                   <% end %>
                 </td>

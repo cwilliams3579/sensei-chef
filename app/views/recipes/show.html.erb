@@ -25,10 +25,10 @@
                   <div class="row liking">
                     <div class="row col-md-8 col-md-offset-2">
                       <%= link_to like_recipe_path(@recipe, like: true), method: :post do %>
-                        <i class="fa fa-thumbs-up fa-2x faa-vertical animated" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= @recipe.thumbs_up_total %></span>
+                        <i class="fa fa-thumbs-up fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-success"><%= @recipe.thumbs_up_total %></span>
                       <% end %> &nbsp;
                       <%= link_to like_recipe_path(@recipe, like: false), method: :post do %>
-                        <i class="fa fa-thumbs-down fa-2x" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @recipe.thumbs_down_total %></span>
+                        <i class="fa fa-thumbs-down fa-2x faa-vertical animated-hover" aria-hidden="true"></i>&nbsp;<span class="badge white text-danger"><%= @recipe.thumbs_down_total %></span>
                       <% end %>
                     </div>
                   </div>
@@ -40,11 +40,11 @@
                 <%= simple_format(@recipe.description) %>
               </p>
               <div class="btn-group">
+                <%= link_to "", recipes_path, class: "fa fa-hand-o-left fa-2x faa-horizontal animated-hover" %>&nbsp;&nbsp;&nbsp;&nbsp;
                 <% if logged_in? && (current_chef == @recipe.chef || current_chef.admin?) %>
-                <%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: "btn btn-sm btn-warning", data: { confirm: "Are you sure you wanna edit this recipe?" } %>
-                <%= link_to "Destroy this recipe", recipe_path(@recipe), class: "btn btn-sm btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+                <%= link_to "", edit_recipe_path(@recipe), class: "fa fa-pencil fa-2x faa-wrench animated-hover", data: { confirm: "Are you sure you wanna edit this recipe?" } %>&nbsp;&nbsp;&nbsp;&nbsp;
+                <%= link_to "", recipe_path(@recipe), class: "fa fa-times fa-2x faa-shake animated-hover", method: :delete, data: { confirm: "Are you sure?" } %>&nbsp;&nbsp;
                 <% end %>
-                <%= link_to "Return to recipes listing", recipes_path, class: "btn btn-sm btn-link" %>
               </div>
           </div>
       </div>
@@ -55,13 +55,13 @@
         <!--Leave a reply form-->
         <div class="reply-form">
             <h1 class="section-heading">Leave a reply </h1>
-            <p class="text-center">(Logged In User)</p>
+            <p class="text-center">(<%= current_chef.chefname %>)</p>
             <!--Third row-->
             <%= form_for([@recipe, @comment], remote: true, :html => {class: "form-horizontal",  role: "form"}) do |f| %>
             <div class="row">
                 <!--Image column-->
                 <div class="col-sm-2 col-12">
-                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg">
+                    <%= link_to gravatar_for(current_chef), chef_path(@chef) %>
                 </div>
                 <!--/.Image column-->
 

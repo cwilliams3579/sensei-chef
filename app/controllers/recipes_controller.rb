@@ -21,6 +21,7 @@ class RecipesController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @recipe.comments.paginate(page: params[:page], per_page: 5)
+    @chef = current_chef
   end
 
   def new

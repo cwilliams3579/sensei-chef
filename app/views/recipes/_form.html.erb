@@ -13,20 +13,20 @@
 
       <!--Body-->
       <%= form_for(@recipe, :html => {class: "form-horizontal", multipart: true, role: "form"}) do |f| %>
-        <div class="md-form">
-          <i class="fa fa-book prefix faa-pulse animated"></i>
-          <%= f.text_field :name, class: "form-control", placeholder: "Enter recipe name", autofocus: true %>
+        <div class="form-inline">
+          <%= f.collection_check_boxes :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
+            <fieldset class="form-inline">
+              <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+            </fieldset>
+          <% end %>
         </div>
         <div class="md-form">
           <i class="fa fa-camera-retro fa-2x faa-pulse animated" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
           <%= f.file_field(:image, accept: 'image/png,image/gif,image/jpeg') %>
         </div>
-        <div class="form-inline mdb-select">
-          <%= f.collection_select :ingredient_ids, Ingredient.all, :id, :name do |cb| %>
-            <fieldset class="form-group">
-              <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox mdb-select") + cb.text} %>
-            </fieldset>
-          <% end %>
+        <div class="md-form">
+          <i class="fa fa-book prefix faa-pulse animated"></i>
+          <%= f.text_field :name, class: "form-control", placeholder: "Enter recipe name", autofocus: true %>
         </div>
         <div class="md-form">
           <i class="fa fa-pencil prefix faa-horizontal animated"></i>
