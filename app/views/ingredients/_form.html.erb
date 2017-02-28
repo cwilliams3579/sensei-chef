@@ -8,13 +8,13 @@
       <div class="card-block">
       <!--Header-->
       <div class="form-header red-gradient">
-        <h3> <i class="fa fa-book "></i></h3>
+        <h3> <i class="fa fa-book faa-tada animated"></i></h3>
       </div>
 
       <!--Body-->
       <%= form_for(@ingredient, :html => { class: "form-horizontal", role: "form" }) do |f| %>
         <div class="md-form">
-          <i class="fa fa-book prefix"></i>
+          <i class="fa fa-book fa-2x faa-tada animated prefix"></i>
           <%= f.text_field :name, input_html: { class: "form-control", placeholder: "Enter ingredient name", autofocus: true } %>
         </div>
 
