@@ -24,15 +24,15 @@
       </div><br>
       <% if logged_in? && (current_chef == recipe.chef || current_chef.admin?) %>
         <div class="recipe-actions">
-          <%= link_to "", edit_recipe_path(recipe), toggle:"tooltip", placement:"top", title:"Edit Recipe", class: "fa fa-pencil faa-horizontal animated-hover fa-2x", style: "color:#FFB841;" %>&nbsp;&nbsp;
+          <%= link_to "", edit_recipe_path(recipe), toggle:"tooltip", placement:"top", title:"Edit Recipe", class: "fa fa-pencil faa-horizontal animated-hover fa-2x", style: "color:#FFB841;" %>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <%= link_to "", recipe_path(recipe), toggle:"tooltip", placement:"top", title:"Delete Recipe", method: :delete,
                                         data: { confirm: "Are you sure you want to delete this recipe?" },
                                         class: "fa fa-trash faa-tada animated-hover fa-2x trash", :style => "color: red;" %>
 
         </div>
       <% end %>
-      <hr>
-
+      <br>
     </div>
     <div class="col-md-2">
       <%= image_tag(recipe.image.url, size: "200x200", class: "img-fluid") if recipe.image? %><br>

@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   resources :chefs, except: [:new]
 
   resources :recipes do
-    collection do
-      get 'search'
-    end
     resources :comments, only: [:create]
     member do
       post 'like'

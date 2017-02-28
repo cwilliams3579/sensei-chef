@@ -1,15 +1,15 @@
 <p><%= render 'shared/page_title', title: "Recipes" %> </p>
 <!--Shopping Cart table-->
 <div class="table-responsive text-center">
-    <table class="table product-table myTable">
+    <table class="table table-hover product-table datatable">
         <!--Table head-->
         <thead>
             <tr class="text-center">
                 <th class="center faa-float animated-hover">Recipe</th>
                 <th class="center faa-float animated-hover">Name</th>
                 <th class="center faa-float animated-hover">Description</th>
-                <th class="center faa-float animated-hover">Chef</th>
                 <th class="center faa-float animated-hover">Created</th>
+                <th class="center faa-float animated-hover">Chef</th>
                 <th class="center faa-float animated-hover">Likes</th>
                 <th class="center faa-float animated-hover">Actions</th>
             </tr>
@@ -23,15 +23,16 @@
           <% @recipes.each do |recipe| %>
             <tr>
                 <th scope="row">
-                  <%= link_to image_tag(recipe.image.url, size: "150x100", class: "faa-pulse animated-hover"), recipe_path(recipe) if recipe.image? %>
+                  <%= link_to image_tag(recipe.image.url, size: "150x100", class: "img-fluid faa-pulse animated-hover"), recipe_path(recipe) if recipe.image? %>
                 </th>
-                <td><strong><%= link_to recipe.name, recipe_path(recipe), class: "text-danger faa-float animated-hover" %></strong><br></td>
+                <td><strong><%= link_to recipe.name, recipe_path(recipe), class: "faa-float animated-hover", style:"color:#333;" %></strong><br></td>
 
                     <td><%= truncate(recipe.description, length: 80) %></td>
-                <td>
-                  <p><%= link_to recipe.chef.chefname.capitalize %></p>
-                </td>
                 <td><small><%= time_ago_in_words(recipe.created_at) %> ago</small></td>
+                <td>
+                  <p><%= link_to recipe.chef.chefname.capitalize, chef_path(recipe.chef), class: "text-black" %></p>
+                </td>
+
                 <td>
                     <span class="qty"> </span>
                     <div class="btn-group" data-toggle="buttons">

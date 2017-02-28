@@ -22,15 +22,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'chartkick'
-gem 'searchkick'
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'aws-sdk', '~> 2.7', '>= 2.7.15'
-gem 'jquery-datatables-rails', '~> 3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'high_voltage'
 group :development do

@@ -12,14 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_self
-//= require dataTables/jquery.dataTables
-//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
-//= require dataTables/jquery.dataTables
 //= require highcharts
 //= require chartkick
 //= require bootstrap-sprockets
-//= require turbolinks
+// require turbolinks
+//= require_self
 //= require_tree .
 
 function scrollToBottom(){
@@ -54,8 +51,3 @@ $(document).on('turbolinks:load', function() {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-
-// Material Select Initialization
-$(document).ready(function() {
-   $('.mdb-select').material_select();
- });
