@@ -1,6 +1,6 @@
 <nav>
   <ul>
-    <li><%= link_to 'Sensei Chef', root_path, class:"navbar-brand" %></li>
+    <li><%= link_to 'Sensei Chef', root_path, class:"navbar-brand faa-pulse animated-hover" %></li>
     <li><%= link_to "Chefs", chefs_path %></li>
     <li><%= link_to "Recipes", recipes_path %></li>
     <li><a href="/pages/about">About</a></li>
@@ -8,12 +8,12 @@
 
     </li>
     <% if logged_in? %>
-      <li><%= link_to "ChefChat", chat_path %></li>
-      <li><%= link_to "View profile", chef_path(current_chef) %></li>
-      <li><%= link_to "Edit profile", edit_chef_path(current_chef) %></li>
-      <li><%= link_to "Log out", logout_path, method: :delete %></li>
+      <li><%= link_to "ChefChat", chat_path, class: "faa-pulse animated-hover" %></li>
+      <li><%= link_to "View profile", chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
+      <li><%= link_to "Edit profile", edit_chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
+      <li><%= link_to "Log out", logout_path, method: :delete, class: "faa-pulse animated-hover" %></li>
     <% else %>
-      <li><%= link_to "Log in", login_path %></li>
+      <li><%= link_to "Log in", login_path, class: "faa-pulse animated-hover" %></li>
     <% end %>
 
 
@@ -27,12 +27,12 @@
 <div class="overlay">
   <div class="wrap">
     <ul class="wrap-nav">
-      <li><a href="/chefs">Chefs</a>
+      <li><a href="/chefs" class="faa-pulse animated-hover">Chefs</a>
         <ul>
-          <li><a href="/recipes">Recipes</a></li>
+          <li><a href="/recipes" class="faa-pulse animated-hover">Recipes</a></li>
         </ul>
       </li>
-      <li><a href="/ingredients">Ingredients</a>
+      <li><a href="/ingredients" class="faa-pulse animated-hover">Ingredients</a>
         <ul>
           <% Recipe.all.each do |recipe| %>
           <li><%= link_to recipe.name, recipes_path(recipe: recipe.name) %></li>
@@ -40,15 +40,15 @@
         </ul>
       </li>
 
-      <li><a href="#">Services</a>
+      <li><a href="#" class="faa-pulse animated-hover">Services</a>
         <ul>
           <li><a href="https://www.cleveland-williams.com/" target="_blank">Web Development</a></li>
-          <li><a href="#">Computer Repair</a></li>
+          <li><a href="#" class="faa-pulse animated-hover">Computer Repair</a></li>
         </ul>
       </li>
-      <li><a href="/pages/about">About</a>
+      <li><a href="/pages/about" class="faa-pulse animated-hover">About</a>
         <ul>
-          <li><a href="/pages/about">About</a></li>
+          <li><a href="/pages/about" class="faa-pulse animated-hover">About</a></li>
         </ul>
       </li>
     </ul>

@@ -5,8 +5,7 @@
     <div class="card-block">
       <!--Header-->
       <div class="form-header red-gradient">
-        <br><br>
-          <h3 class="text-center"><i class="fa fa-pencil faa-horizontal animated" style="color:#FFB841;"></i></h3>
+          <h3 class="text-center"><i class="fa fa-pencil fa-2x faa-horizontal animated"></i></h3>
       </div>
       <!--Body-->
       <%= form_for(@chef, :html => {class: "form-horizontal", role: "form"}) do |f| %>
@@ -27,7 +26,7 @@
         <i class="fa fa-lock prefix faa-tada animated"></i>
         <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Repeat password" %>
       </div>
-      <%= f.submit :class => 'btn btn-danger btn-block btn-lg' %><br>
+      <%= f.button :class => 'btn btn-danger btn-block btn-lg', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i>Processing..."} %><br>
       <fieldset class="form-group center">
         <%= link_to "Cancel request and return to recipes listing", recipes_path, class: "text-danger" %>
       </fieldset>
