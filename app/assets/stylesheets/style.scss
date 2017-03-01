@@ -99,3 +99,52 @@ li {
  overflow: auto;
  position: relative;
 }
+
+// Chat Box
+
+.box-footer {
+		width: 600px;
+		margin: 0 auto;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.emoji-picker-icon {
+	padding-right: 10px;
+	font-size: 30px !important;
+	-webkit-animation: tada 2s linear infinite;
+animation: tada 2s linear infinite;
+}
+
+.emoji-wysiwyg-editor {
+    padding: 6px 35px 6px 6px;
+    margin-bottom: 0;
+    min-height: 40px;
+    height: 30px;
+    max-height: 284px;
+    overflow: auto;
+    position: relative;
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    resize: both;
+    line-height: 17px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+    border-bottom: 1px solid $primary-red;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+    -webkit-user-select: text;
+    word-wrap: break-word;
+}
+
+.emoji {
+	display: inline !important;
+}
