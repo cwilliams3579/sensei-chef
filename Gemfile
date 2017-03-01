@@ -28,6 +28,7 @@ gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 gem 'bootstrap-will_paginate', '~> 0.0.10'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'rails_emoji_picker'
 gem 'aws-sdk', '~> 2.7', '>= 2.7.15'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'high_voltage'

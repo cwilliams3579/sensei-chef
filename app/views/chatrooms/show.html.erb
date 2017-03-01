@@ -23,9 +23,9 @@
                 <!--/.Image column-->
 
                 <!--Content column-->
-                  <div class="col-sm-10 col-12">
+                  <div class="col-sm-10 col-12 emoji-picker-container">
                     <div class="md-form">
-                        <%= f.text_area :content, data: { behavior: "room_speaker" }, class: "md-textarea" %>
+                        <%= f.text_area :content, data: { behavior: "room_speaker", emojiable: true  }, class: "md-textarea" %>
                     </div>
                   </div>
                   <div class="col-md-4 danger-block">

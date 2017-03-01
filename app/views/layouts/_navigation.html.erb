@@ -1,3 +1,4 @@
+<%= render 'layouts/register' %>
 <nav>
   <ul>
     <li><%= link_to 'Sensei Chef', root_path, class:"navbar-brand faa-pulse animated-hover" %></li>
@@ -15,10 +16,6 @@
     <% else %>
       <li><%= link_to "Log in", login_path, class: "faa-pulse animated-hover" %></li>
     <% end %>
-
-
-    <%= render 'layouts/register' %>
-
   </ul>
   <div class="button">
     <a class="btn-open" href="#!"></a>
