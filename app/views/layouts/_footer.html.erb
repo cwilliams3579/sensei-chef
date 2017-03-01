@@ -7,26 +7,62 @@
         <div class="row">
 
             <!--First column-->
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <h5 class="title">Sensei Chef</h5>
                 <p></p>
             </div>
             <!--/.First column-->
 
             <!--Second column-->
-            <div class="col-md-6">
-                <h5 class="title">Recipes</h5>
+            <div class="col-md-3">
+                <h5 class="title">Chefs</h5>
                 <ul>
-                  <% Recipe.all.last(4).each do |recipe| %>
-                    <li><a href="#!"><%= link_to recipe.name, recipe_path(recipe) %></a></li>
+                  <% Chef.all.last(4).each do |chef| %>
+                    <li><a href="#!"><%= link_to chef.chefname.capitalize, chef_path(chef) %></a></li>
                   <% end %>
                 </ul>
             </div>
             <!--/.Second column-->
+
+            <!--Third column-->
+            <div class="col-md-3">
+                <h5 class="title">Recipes</h5>
+                <ul>
+                  <% Recipe.all.last(4).each do |recipe| %>
+                    <li><a href="#!"><%= link_to recipe.name.capitalize, recipe_path(recipe) %></a></li>
+                  <% end %>
+                </ul>
+            </div>
+            <!--/.Third column-->
+
+            <!--Fourth column-->
+            <div class="col-md-3">
+                <h5 class="title">Ingredients</h5>
+                <ul>
+                  <% Ingredient.all.last(4).each do |ing| %>
+                    <li><a href="#!"><%= link_to ing.name.capitalize, ingredient_path(ing) %></a></li>
+                  <% end %>
+                </ul>
+            </div>
+            <!--/.Fourth column-->
         </div>
     </div>
     <!--/.Footer Links-->
+    <hr>
 
+    <!--Social buttons-->
+    <div class="social-section">
+        <ul>
+            <li><a class="btn-floating btn-small btn-fb faa-tada animated-hover"><i class="fa fa-facebook"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-tw faa-tada animated-hover"><i class="fa fa-twitter"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-gplus faa-tada animated-hover"><i class="fa fa-google-plus"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-li faa-tada animated-hover"><i class="fa fa-linkedin"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-git faa-tada animated-hover"><i class="fa fa-github"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-pin faa-tada animated-hover"><i class="fa fa-pinterest"> </i></a></li>
+            <li><a class="btn-floating btn-small btn-ins faa-tada animated-hover"><i class="fa fa-instagram"> </i></a></li>
+        </ul>
+    </div>
+    <!--/.Social buttons-->
     <!--Copyright-->
     <div class="footer-copyright">
         <div class="container-fluid">

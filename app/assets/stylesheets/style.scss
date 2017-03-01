@@ -30,7 +30,7 @@ input[type="text"]:focus:not([readonly])+label {
 }
 
 .green {
- background: #00C851 !important;
+	background: #00C851 !important;
 }
 
 .fa-exclamation-triangle {
@@ -38,9 +38,9 @@ input[type="text"]:focus:not([readonly])+label {
 }
 
 .faa-flash.animated, .faa-flash.animated-hover:hover, .faa-parent.animated-hover:hover>.faa-flash {
-    -webkit-animation: flash 5s ease infinite;
-    animation: flash 5s ease infinite;
-    color: $primary-red !important;
+	-webkit-animation: flash 5s ease infinite;
+	animation: flash 5s ease infinite;
+	color: $primary-red !important;
 }
 
 
@@ -52,99 +52,125 @@ input[type="text"]:focus:not([readonly])+label {
 }
 
 .fa-pencil {
-  color: #FFB841 !important;
+	color: #FFB841 !important;
 }
 
 .fa-trash {
-  color: #CC0000 !important;
+	color: #CC0000 !important;
 }
 
 .fa-clock-o {
- color: #0A76B7;
+	color: #0A76B7;
 }
 
 li {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 
 /* Scrollbar */
 
 ::-webkit-scrollbar {
-    width: 8px;
+	width: 8px;
 }
 /* Track */
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #00C851;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #00C851;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-   background: $primary-red;
+	background: $primary-red;
 }
 
 .messages {
- height: 16em;
- border: 1px solid #eaeaea;
- overflow: auto;
- position: relative;
+	height: 16em;
+	border: 1px solid #eaeaea;
+	overflow: auto;
+	position: relative;
 }
 
 // Chat Box
 
 .box-footer {
-		width: 600px;
-		margin: 0 auto;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-top: 1px solid #f4f4f4;
-    padding: 10px;
-    background-color: #fff;
+	width: 600px;
+	margin: 0 auto;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	border-top: 1px solid #f4f4f4;
+	padding: 10px;
+	background-color: #fff;
 }
 
 .emoji-picker-icon {
 	padding-right: 10px;
 	font-size: 30px !important;
 	-webkit-animation: tada 2s linear infinite;
-animation: tada 2s linear infinite;
+	animation: tada 2s linear infinite;
 }
 
 .emoji-wysiwyg-editor {
-    padding: 6px 35px 6px 6px;
-    margin-bottom: 0;
-    min-height: 40px;
-    height: 30px;
-    max-height: 284px;
-    overflow: auto;
-    position: relative;
-    -moz-appearance: textfield-multiline;
-    -webkit-appearance: textarea;
-    resize: both;
-    line-height: 17px;
-		border-top: none;
-		border-left: none;
-		border-right: none;
-    border-bottom: 1px solid $primary-red;
-    border-radius: 2px;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
-    -webkit-user-select: text;
-    word-wrap: break-word;
+	padding: 6px 35px 6px 6px;
+	margin-bottom: 0;
+	min-height: 40px;
+	height: 30px;
+	max-height: 284px;
+	overflow: auto;
+	position: relative;
+	-moz-appearance: textfield-multiline;
+	-webkit-appearance: textarea;
+	resize: both;
+	line-height: 17px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid $primary-red;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	transition: border-color ease-in-out 0.15s,box-shadow ease-in-out 0.15s;
+	-webkit-user-select: text;
+	word-wrap: break-word;
 }
 
 .emoji {
 	display: inline !important;
+}
+
+#font {
+	font-family: 'Pacifico', cursive;
+}
+
+.text-middle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	bottom: auto;
+	right: auto;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	text-align: center;
+	width: 100%;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.home-btn {
+	position: relative;
+	margin: 0 auto;
+	bottom: auto;
 }
