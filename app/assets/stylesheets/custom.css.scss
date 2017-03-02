@@ -106,7 +106,7 @@ $danger: #CC0000;
   font-size: 13px;
   font-style: normal;
   font-weight: 600;
-  color: $danger;
+  color: #00C851;
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
@@ -160,4 +160,10 @@ $danger: #CC0000;
 
 .danger-block {
   margin: 0 auto;
+}
+
+.h3-responsive {
+  a {
+    color: #00C851;
+  }
 }

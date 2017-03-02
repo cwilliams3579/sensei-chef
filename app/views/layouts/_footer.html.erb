@@ -15,7 +15,7 @@
 
             <!--Second column-->
             <div class="col-md-3">
-                <h5 class="title">Chefs</h5>
+                <a href="/chefs"><h5 class="title">Chefs</h5></a>
                 <ul>
                   <% Chef.all.last(4).each do |chef| %>
                     <li><a href="#!"><%= link_to chef.chefname.capitalize, chef_path(chef) %></a></li>
@@ -26,7 +26,7 @@
 
             <!--Third column-->
             <div class="col-md-3">
-                <h5 class="title">Recipes</h5>
+                <a href="/recipes"><h5 class="title">Recipes</h5></a>
                 <ul>
                   <% Recipe.all.last(4).each do |recipe| %>
                     <li><a href="#!"><%= link_to recipe.name.capitalize, recipe_path(recipe) %></a></li>
@@ -37,7 +37,7 @@
 
             <!--Fourth column-->
             <div class="col-md-3">
-                <h5 class="title">Ingredients</h5>
+                <a href="/ingredients"><h5 class="title">Ingredients</h5></a>
                 <ul>
                   <% Ingredient.all.last(4).each do |ing| %>
                     <li><a href="#!"><%= link_to ing.name.capitalize, ingredient_path(ing) %></a></li>
