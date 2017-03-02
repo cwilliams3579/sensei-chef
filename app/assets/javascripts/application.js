@@ -46,9 +46,9 @@ $(document).on('turbolinks:load', function() {
     $('#message_content').val('');
   })
   scrollToBottom();
-});
+})
 
 // Tooltips Initialization
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
-});
+})

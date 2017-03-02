@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready('turbolinks',function(){
     $(".button a").click(function(){
         $(".overlay").fadeToggle(200);
        $(this).toggleClass('btn-open').toggleClass('btn-close');

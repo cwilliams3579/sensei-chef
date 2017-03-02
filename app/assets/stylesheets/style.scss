@@ -147,6 +147,8 @@ li {
 
 .emoji {
 	display: inline !important;
+	-webkit-animation: tada 2s linear infinite;
+	animation: tada 2s linear infinite;
 }
 
 #font {
@@ -173,4 +175,21 @@ li {
 	position: relative;
 	margin: 0 auto;
 	bottom: auto;
+	margin-top: 50px !important;
+}
+
+.counter-home {
+    position: absolute;
+    margin-left: -23px;
+    margin-top: -1px;
+    background-color: #fff;
+    color: #00C851;
+    padding: 1px 7px;
+    font-size: 11px;
+    z-index: 2;
+    -webkit-border-radius: 10rem;
+    -moz-border-radius: 10rem;
+    -ms-border-radius: 10rem;
+    -o-border-radius: 10rem;
+    border-radius: 10rem;
 }

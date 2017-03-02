@@ -1,78 +1,20 @@
-<%= render 'layouts/register' %>
-<nav>
-  <ul>
-    <li><%= link_to 'Sensei Chef', root_path, class:"navbar-brand faa-pulse animated-hover" %></li>
-    <li><%= link_to "Chefs", chefs_path %></li>
-    <li><%= link_to "Recipes", recipes_path %></li>
-    <li><a href="/pages/about">About</a></li>
-    <li>
-
-    </li>
-    <% if logged_in? %>
-      <li><%= link_to "ChefChat", chat_path, class: "faa-pulse animated-hover" %></li>
-      <li><%= link_to "View profile", chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
-      <li><%= link_to "Edit profile", edit_chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
-      <li><%= link_to "Log out", logout_path, method: :delete, class: "faa-pulse animated-hover" %></li>
-    <% else %>
-      <li><%= link_to "Log in", login_path, class: "faa-pulse animated-hover" %></li>
-    <% end %>
-  </ul>
-  <div class="button">
-    <a class="btn-open" href="#!"></a>
-  </div>
-</nav>
-<div class="overlay">
-  <div class="wrap">
-    <ul class="wrap-nav">
-      <li><a href="/chefs" class="faa-pulse animated-hover">Chefs</a>
-        <ul>
-          <li><a href="/recipes" class="faa-pulse animated-hover">Recipes</a></li>
-        </ul>
-      </li>
-      <li><a href="/ingredients" class="faa-pulse animated-hover">Ingredients</a>
-        <ul>
-          <% Recipe.all.each do |recipe| %>
-          <li><%= link_to recipe.name, recipes_path(recipe: recipe.name) %></li>
-          <% end %>
-        </ul>
-      </li>
-
-      <li><a href="#" class="faa-pulse animated-hover">Services</a>
-        <ul>
-          <li><a href="https://www.cleveland-williams.com/" target="_blank">Web Development</a></li>
-          <li><a href="#" class="faa-pulse animated-hover">Computer Repair</a></li>
-        </ul>
-      </li>
-      <li><a href="/pages/about" class="faa-pulse animated-hover">About</a>
-        <ul>
-          <li><a href="/pages/about" class="faa-pulse animated-hover">About</a></li>
-        </ul>
-      </li>
-    </ul>
-    <div class="social">
-      <a href="https://www.facebook.com/tony.gilbert.9440/" target="_blank">
-        <div class="social-icon">
-          <i class="fa fa-facebook"></i>
-        </div>
-      </a>
-      <a href="https://github.com/cwilliams3579" target="_blank">
-        <div class="social-icon">
-          <i class="fa fa-github"></i>
-        </div>
-      </a>
-      <a href="http://codepen.io/cwilliams3579/" target="_blank">
-        <div class="social-icon">
-          <i class="fa fa-codepen"></i>
-        </div>
-      </a>
-      <p>
-        By: Cleveland Williams<br>
-        Site: <a href="http://coding-ninjas.com/" target="_blank">coding-ninjas.com</a>
-      </p>
-    </div>
-  </div>
-</div>
-<div class="content">
-
+<div class="menu-collapsed">
+   <div class="bar"></div>
+   <nav>
+      <ul>
+         <li><a href="/">Home</a></li>
+         <li><a href="/chefs">Chefs</a></li>
+         <li><a href="/recipes">Recipes</a></li>
+         <li><a href="/pages/about">About</a></li>
+         <% if logged_in? %>
+           <li><%= link_to "ChefChat", chat_path, class: "faa-pulse animated-hover" %></li>
+           <li><%= link_to "View profile", chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
+           <li><%= link_to "Edit profile", edit_chef_path(current_chef), class: "faa-pulse animated-hover" %></li>
+           <li><%= link_to "Sign Out", logout_path, method: :delete, class: "faa-pulse animated-hover" %></li>
+         <% else %>
+           <li><%= link_to "Sign In", login_path, class: "faa-pulse animated-hover" %></li>
+         <% end %>
+      </ul>
+   </nav>
 </div>
 <br><br><br>
